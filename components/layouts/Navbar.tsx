@@ -7,7 +7,7 @@ import { VscThreeBars } from "react-icons/vsc";
 
 const Navbar = () => {
   return (
-    <header className="mt-8 px-4 sm:px-0">
+    <header className="mt-8">
       <Container>
         <div className="hidden md:flex bg-[#FAFAFA] rounded-3xl px-8 py-6 items-center justify-between">
           <nav>

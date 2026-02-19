@@ -7,7 +7,8 @@
 @theme inline {
   --color-background: var(--background);
 
-  --font-rubic: var(--font-rubic);
+  --font-rubik: var(--font-rubik);
+  --font-open-sans: var(--font-open-sans);
 }
 
 body {

@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
-import { Rubik } from "next/font/google";
+import { Open_Sans, Rubik } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 
 const rubik = Rubik({
   variable: "--font-rubik",
+  subsets: ["latin"],
+});
+
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
 });
 
@@ -22,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${rubik.variable} antialiased`}
+        className={`${rubik.variable} ${openSans.variable} antialiased`}
       >
         <Navbar />
         {children} 

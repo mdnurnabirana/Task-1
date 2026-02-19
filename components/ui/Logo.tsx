@@ -13,6 +13,7 @@ const Logo = ({ height = 32, width = 128}: LogoProps) => {
       width={width}
       alt="Logo"
       priority
+      className="h-5 w-20 sm:h-8 sm:w-32"
     />
   );
 };
