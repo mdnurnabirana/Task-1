@@ -3,6 +3,7 @@ import { Open_Sans, Rubik } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
+import Newsletter from "@/components/layouts/Newsletter";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -31,6 +32,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children} 
+        <Newsletter />
         <Footer />
       </body>
     </html>

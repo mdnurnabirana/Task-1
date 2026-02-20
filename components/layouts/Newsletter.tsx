@@ -19,7 +19,7 @@ const Newsletter = () => {
                 placeholder="Enter your email"
                 className="flex-1 min-w-0 w-full rounded-lg px-4 py-3 border border-white placeholder-[#E7E7E3] text-black focus:outline-none focus:ring-2 focus:ring-white bg-white"
               />
-              <button className="w-auto bg-[#232321] rounded-lg px-6 py-3 uppercase font-medium hover:bg-gray-800 transition">
+              <button className="w-auto bg-[#232321] rounded-lg px-6 py-3 uppercase text-sm font-medium hover:bg-gray-800 transition">
                 Submit
               </button>
             </div>

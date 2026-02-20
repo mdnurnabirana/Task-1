@@ -32,6 +32,7 @@ const FeaturedProducts = async () => {
           {products.map((product) => (
             <FeaturedProductCard
               key={product.id}
+              id={product.id}
               title={product.title}
               price={product.price}
               image={product.images[0]}

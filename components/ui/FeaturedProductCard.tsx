@@ -2,12 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 type FeaturedProductCardProps = {
+  id: number;
   title: string;
   price: number;
   image: string;
 };
 
 const FeaturedProductCard = ({
+  id,
   title,
   price,
   image,
@@ -31,7 +33,7 @@ const FeaturedProductCard = ({
         {title}
       </h1>
 
-      <Link href="/products/1">
+      <Link href={`/products/${id}`}>
         <button className="bg-[#232321] font-semibold text-xs sm:text-sm uppercase text-white py-3 w-full rounded-xl sm:rounded-2xl mt-4 cursor-pointer">
           View Product - <span className="text-[#FFA52F]">${price}</span>
         </button>
