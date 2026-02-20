@@ -5,7 +5,7 @@ const Newsletter = () => {
   return (
     <section className="mt-12 sm:mt-32">
       <Container>
-        <div className="bg-[#4A69E2] rounded-3xl sm:rounded-[48px] text-white flex flex-col md:flex-row justify-between items-start sm:items-center px-4 sm:px-12 lg:px-18 py-4 sm:py-16 gap-8 md:gap-50 pb-50">
+        <div className="bg-[#4A69E2] rounded-3xl sm:rounded-[48px] text-white flex flex-col md:flex-row justify-between items-start sm:items-center px-4 sm:px-12 lg:px-18 py-4 sm:py-16 gap-8 md:gap-50 pb-50 sm:pb-50">
           <div className="flex-1 w-full">
             <h1 className="font-semibold uppercase text-3xl sm:text-5xl">
               Join our KicksPlus Club & get 15% off
