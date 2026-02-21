@@ -1,8 +1,8 @@
 import Container from "@/components/ui/Container";
-import Image from "next/image";
 import axios from "axios";
 import ButtonOne from "@/components/ui/ButtonOne";
 import { FiHeart } from "react-icons/fi";
+import ProductImages from "@/components/ui/ProductImages";
 
 type Product = {
   id: number;
@@ -51,25 +51,9 @@ const ProductDetail = async ({ params }: PageProps) => {
     <section className="mt-8">
       <Container>
         <div className="flex flex-col md:flex-row gap-8">
-          <div className="flex-1 rounded-xl">
-            <div className="grid grid-cols-2 gap-4">
-              {product.images.map((img, idx) => (
-                <div
-                  key={idx}
-                  className="rounded-xl overflow-hidden border-2 border-transparent"
-                >
-                  <Image
-                    src={img}
-                    alt={`${product.title} ${idx + 1}`}
-                    width={430}
-                    height={510}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-
+          {/* Image Section */}
+          <ProductImages images={product.images} title={product.title} />
+          {/* Detail Section */}
           <div className="flex-1 flex flex-col gap-4">
             <button className="bg-[#4A69E2] rounded-xl py-3 px-4 text-white font-semibold text-sm w-fit">
               New Releases
@@ -93,7 +77,7 @@ const ProductDetail = async ({ params }: PageProps) => {
               <h1 className="text-[16px]">Size</h1>
               <h1 className="font-medium">Size Chart</h1>
             </div>
-            <div className="flex justify-between w-fit gap-1">
+            <div className="flex flex-wrap w-fit gap-2.5 sm:gap-1">
               <button className="rounded-lg text-white px-4 py-3 bg-[#232321] font-semibold">
                 38
               </button>
