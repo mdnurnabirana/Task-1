@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function CartCount() {
@@ -24,8 +25,8 @@ export default function CartCount() {
   }, []);
 
   return (
-    <div className="bg-[#FFA52F] h-8 w-8 rounded-full flex items-center justify-center font-semibold text-sm text-black">
+    <Link href="/cart" className="bg-[#FFA52F] h-8 w-8 rounded-full flex items-center justify-center font-semibold text-sm text-black">
       {count}
-    </div>
+    </Link>
   );
 }

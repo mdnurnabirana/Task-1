@@ -16,11 +16,12 @@ const Navbar = () => {
               <li><Link href="/">New Drops 🔥</Link></li>
               <li><Link href="/">Men</Link></li>
               <li><Link href="/">Women</Link></li>
+              <li><Link href="/cart">Cart</Link></li>
             </ul>
           </nav>
 
-          <Logo width={128} height={32} />
-
+          <Link href={"/"}><Logo width={128} height={32} /></Link>
+          
           <div className="flex items-center gap-8">
             <FiSearch size={24} />
             <FaUser size={24} />
