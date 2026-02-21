@@ -36,13 +36,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
+    window.dispatchEvent(new Event("cart-updated"));
   }, [cart]);
 
   const addToCart = (newItem: Omit<CartItem, "quantity">) => {
     setCart((prev) => {
       const exists = prev.find((i) => i.id === newItem.id);
       if (exists) {
-        return prev; 
+        return prev;
       }
       return [...prev, { ...newItem, quantity: 1 }];
     });

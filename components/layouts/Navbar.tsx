@@ -4,6 +4,7 @@ import Logo from "../ui/Logo";
 import { FiSearch } from "react-icons/fi";
 import { FaUser } from "react-icons/fa";
 import { VscThreeBars } from "react-icons/vsc";
+import CartCount from "../ui/CartCount";
 
 const Navbar = () => {
   return (
@@ -23,9 +24,10 @@ const Navbar = () => {
           <div className="flex items-center gap-8">
             <FiSearch size={24} />
             <FaUser size={24} />
-            <div className="bg-[#FFA52F] h-8 w-8 rounded-full flex items-center justify-center font-semibold">
+            {/* <div className="bg-[#FFA52F] h-8 w-8 rounded-full flex items-center justify-center font-semibold">
               0
-            </div>
+            </div> */}
+            <CartCount />
           </div>
         </div>
 
