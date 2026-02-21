@@ -3,6 +3,7 @@ import axios from "axios";
 import ButtonOne from "@/components/ui/ButtonOne";
 import { FiHeart } from "react-icons/fi";
 import ProductImages from "@/components/ui/ProductImages";
+import RecommendedProduct from "@/components/layouts/RecommendedProduct";
 
 type Product = {
   id: number;
@@ -124,6 +125,7 @@ const ProductDetail = async ({ params }: PageProps) => {
           </div>
         </div>
       </Container>
+      <RecommendedProduct />
     </section>
   );
 };
