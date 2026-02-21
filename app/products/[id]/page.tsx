@@ -4,6 +4,7 @@ import ButtonOne from "@/components/ui/ButtonOne";
 import { FiHeart } from "react-icons/fi";
 import ProductImages from "@/components/ui/ProductImages";
 import RecommendedProduct from "@/components/layouts/RecommendedProduct";
+import AddToCartButton from "@/components/ui/AddToCartButton";
 
 type Product = {
   id: number;
@@ -105,9 +106,12 @@ const ProductDetail = async ({ params }: PageProps) => {
               </button>
             </div>
             <div className="flex justify-start gap-2 mt-8">
-              <button className="bg-[#232321] rounded-lg text-white font-medium uppercase py-4 text-sm w-full">
-                Add to Cart
-              </button>
+              <AddToCartButton
+                id={product.id}
+                title={product.title}
+                price={product.price}
+                image={product.images[0] || ""}
+              />
               <button className="bg-[#232321] rounded-lg px-4 py-4 text-white">
                 <FiHeart size={18} />
               </button>

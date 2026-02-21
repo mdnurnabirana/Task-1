@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import Newsletter from "@/components/layouts/Newsletter";
+import { CartProvider } from "@/context/CartContext";
+import { Toaster } from "react-hot-toast";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -27,13 +29,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${rubik.variable} ${openSans.variable} antialiased`}
-      >
+      <body className={`${rubik.variable} ${openSans.variable} antialiased`}>
         <Navbar />
-        {children} 
+        <CartProvider>{children}</CartProvider>
         <Newsletter />
         <Footer />
+        <Toaster />
       </body>
     </html>
   );
