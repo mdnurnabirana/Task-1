@@ -27,113 +27,132 @@ const CartItems = () => {
       className="mt-8 flex flex-col sm:flex-row justify-between gap-10 px-0 sm:px-10"
     >
       {/* Left Section */}
-      <div className="bg-[#FAFAFA] rounded-2xl p-3 sm:p-6">
-        <motion.h1
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="font-semibold text-2xl sm:text-[32px]"
-        >
-          Your Bag
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.05 }}
-          className="mt-2 text-xs sm:text-sm font-open-sans"
-        >
-          Items in your bag not reserved- check out now to make them yours.
-        </motion.p>
-
-        <AnimatePresence>
-          {cart.map((item) => (
-            <motion.div
-              key={item.id}
-              layout
-              initial={{ opacity: 0, y: 15 }}
+      <div className="bg-[#FAFAFA] rounded-2xl p-3 sm:p-6 flex-1">
+        {cart.length === 0 ? (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col items-center justify-center h-full text-center py-20 text-gray-500"
+          >
+            <BsCartX size={50} className="mb-4" />
+            <h1 className="font-semibold text-2xl sm:text-3xl">
+              Cart Not Available
+            </h1>
+            <p className="mt-2 text-sm sm:text-base">
+              Your shopping bag is empty. Start adding items to see them here!
+            </p>
+          </motion.div>
+        ) : (
+          <>
+            <motion.h1
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.3 }}
-              whileHover={{
-                scale: 1.02,
-                boxShadow: "0 8px 20px rgba(0,0,0,0.08)",
-              }}
-              className="flex justify-between gap-3 sm:gap-6 mt-6"
+              transition={{ duration: 0.4 }}
+              className="font-semibold text-2xl sm:text-[32px]"
             >
-              <Image
-                src={item.image}
-                alt={item.title}
-                height={225}
-                width={200}
-                className="rounded-2xl w-39 h-54 sm:w-50 sm:h-57"
-              />
+              Your Bag
+            </motion.h1>
 
-              <div>
-                <div className="flex justify-start sm:justify-between items-start gap-8">
-                  <motion.h1
-                    layout
-                    className="font-semibold text-[16px] sm:text-2xl line-clamp-2"
-                  >
-                    {item.title}
-                  </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.05 }}
+              className="mt-2 text-xs sm:text-sm font-open-sans"
+            >
+              Items in your bag not reserved- check out now to make them yours.
+            </motion.p>
 
-                  <motion.p
-                    layout
-                    className="font-open-sans font-semibold text-[#4A69E2] text-2xl hidden sm:block"
-                  >
-                    ${item.price}
-                  </motion.p>
-                </div>
+            <AnimatePresence>
+              {cart.map((item) => (
+                <motion.div
+                  key={item.id}
+                  layout
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.3 }}
+                  whileHover={{
+                    scale: 1.02,
+                    boxShadow: "0 8px 20px rgba(0,0,0,0.08)",
+                  }}
+                  className="flex justify-between gap-3 sm:gap-6 mt-6"
+                >
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    height={225}
+                    width={200}
+                    className="rounded-2xl w-39 h-54 sm:w-50 sm:h-57"
+                  />
 
-                <p className="mt-2 text-xs sm:text-sm font-open-sans">
-                  Men’s Road Running Shoes
-                </p>
+                  <div>
+                    <div className="flex justify-start sm:justify-between items-start gap-8">
+                      <motion.h1
+                        layout
+                        className="font-semibold text-[16px] sm:text-2xl line-clamp-2"
+                      >
+                        {item.title}
+                      </motion.h1>
 
-                <p className="mt-2 text-xs sm:text-sm font-open-sans">
-                  Men’s Road Running Shoes
-                </p>
+                      <motion.p
+                        layout
+                        className="font-open-sans font-semibold text-[#4A69E2] text-2xl hidden sm:block"
+                      >
+                        ${item.price}
+                      </motion.p>
+                    </div>
 
-                <div className="flex items-center gap-2 sm:gap-8 text-xs sm:text-sm font-open-sans mt-5">
-                  <div className="flex items-center gap sm:gap-2">
-                    <span>Size:</span>
-                    <span className="font-medium">10</span>
-                    <MdOutlineKeyboardArrowDown
-                      size={20}
-                      className="text-gray-500"
-                    />
+                    <p className="mt-2 text-xs sm:text-sm font-open-sans">
+                      Men’s Road Running Shoes
+                    </p>
+
+                    <p className="mt-2 text-xs sm:text-sm font-open-sans">
+                      Men’s Road Running Shoes
+                    </p>
+
+                    <div className="flex items-center gap-2 sm:gap-8 text-xs sm:text-sm font-open-sans mt-5">
+                      <div className="flex items-center gap sm:gap-2">
+                        <span>Size:</span>
+                        <span className="font-medium">10</span>
+                        <MdOutlineKeyboardArrowDown
+                          size={20}
+                          className="text-gray-500"
+                        />
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <span>Quantity:</span>
+                        <motion.span
+                          layout
+                          key={item.quantity}
+                          animate={{ scale: [1, 1.1, 1] }}
+                          transition={{ duration: 0.2 }}
+                          className="font-medium"
+                        >
+                          {item.quantity}
+                        </motion.span>
+                        <MdOutlineKeyboardArrowDown
+                          size={20}
+                          className="text-gray-500"
+                        />
+                      </div>
+                    </div>
+
+                    <p className="mt-2 font-open-sans font-semibold text-[#4A69E2] text-xl sm:text-2xl block sm:hidden">
+                      ${item.price}
+                    </p>
+
+                    <div className="flex justify-start gap-5 mt-3 sm:mt-9">
+                      <LuHeart size={28} />
+                      <BsCartX size={28} />
+                    </div>
                   </div>
-
-                  <div className="flex items-center gap-2">
-                    <span>Quantity:</span>
-                    <motion.span
-                      layout
-                      key={item.quantity}
-                      animate={{ scale: [1, 1.1, 1] }}
-                      transition={{ duration: 0.2 }}
-                      className="font-medium"
-                    >
-                      {item.quantity}
-                    </motion.span>
-                    <MdOutlineKeyboardArrowDown
-                      size={20}
-                      className="text-gray-500"
-                    />
-                  </div>
-                </div>
-
-                <p className="mt-2 font-open-sans font-semibold text-[#4A69E2] text-xl sm:text-2xl block sm:hidden">
-                  ${item.price}
-                </p>
-
-                <div className="flex justify-start gap-5 mt-3 sm:mt-9">
-                  <LuHeart size={28} />
-                  <BsCartX size={28} />
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </>
+        )}
       </div>
 
       {/* Order Summary */}

@@ -36,7 +36,7 @@ const Navbar = () => {
         <div className="flex md:hidden bg-[#FAFAFA] rounded-3xl px-4 py-4 items-center justify-between">
           <VscThreeBars size={28} />
 
-          <Logo width={128} height={32} />
+          <Link href={"/"}><Logo width={128} height={32} /></Link>
 
           <div className="flex items-center gap-4">
             <FaUser size={24} />
