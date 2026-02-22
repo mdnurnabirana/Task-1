@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { MdStar } from "react-icons/md";
+import { motion } from "motion/react";
 
 type Props = {
   userImg: string;
@@ -7,7 +10,14 @@ type Props = {
 
 const ReviewCard = ({ userImg }: Props) => {
   return (
-    <div className="bg-[#FAFAFA] rounded-2xl sm:rounded-4xl">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      whileHover={{ scale: 1.02, boxShadow: "0 10px 25px rgba(0,0,0,0.08)" }}
+      className="bg-[#FAFAFA] rounded-2xl sm:rounded-4xl"
+    >
       <div className="p-4 sm:p-8">
         <div className="flex justify-between items-center">
           <div>
@@ -24,7 +34,9 @@ const ReviewCard = ({ userImg }: Props) => {
           <MdStar color="#FFA52F" size={24} />
           <MdStar color="#FFA52F" size={24} />
           <MdStar color="#FFA52F" size={24} />
-          <span className="font-semibold text-[16px] ml-2 font-open-sans">5.0</span>
+          <span className="font-semibold text-[16px] ml-2 font-open-sans">
+            5.0
+          </span>
         </div>
       </div>
 
@@ -35,7 +47,7 @@ const ReviewCard = ({ userImg }: Props) => {
         width={430}
         className="rounded-b-2xl sm:rounded-b-4xl"
       />
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { GoArrowUpRight } from "react-icons/go";
+import { motion } from "motion/react";
 
 type Props = {
   image: string;
@@ -9,13 +12,18 @@ type Props = {
 
 const FeaturedCategoryCard = ({ image, title, active }: Props) => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      whileHover={{ scale: 1.02, boxShadow: "0 10px 25px rgba(0,0,0,0.08)" }}
       className={`relative bg-[#ECEEF0]
-      shrink-0
-      min-w-86 md:min-w-160
-      h-80 md:h-120
-      ${active ? "rounded-tl-[64px]" : ""}
-      overflow-hidden`}
+        shrink-0
+        min-w-86 md:min-w-160
+        h-80 md:h-120
+        ${active ? "rounded-tl-[64px]" : ""}
+        overflow-hidden`}
     >
       <div className="absolute bottom-3 sm:bottom-7 left-0 w-full flex justify-between items-center px-5 sm:px-25 z-10">
         <h1 className="font-semibold text-2xl md:text-4xl uppercase">
@@ -36,7 +44,7 @@ const FeaturedCategoryCard = ({ image, title, active }: Props) => {
           className="object-contain w-full h-full"
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

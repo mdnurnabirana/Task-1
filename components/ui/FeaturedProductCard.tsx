@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 type FeaturedProductCardProps = {
   id: number;
@@ -15,7 +18,14 @@ const FeaturedProductCard = ({
   image,
 }: FeaturedProductCardProps) => {
   return (
-    <div className="flex flex-col">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }} 
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      whileHover={{ scale: 1.03, boxShadow: "0 10px 20px rgba(0,0,0,0.08)" }}
+      className="flex flex-col"
+    >
       <div className="bg-white rounded-2xl sm:rounded-3xl p-2 relative">
         <Image
           src={image}
@@ -38,7 +48,7 @@ const FeaturedProductCard = ({
           View Product - <span className="text-[#FFA52F]">${price}</span>
         </button>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

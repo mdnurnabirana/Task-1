@@ -40,9 +40,10 @@ const Navbar = () => {
 
           <div className="flex items-center gap-4">
             <FaUser size={24} />
-            <div className="bg-[#FFA52F] h-8 w-8 rounded-full flex items-center justify-center font-semibold">
+            {/* <div className="bg-[#FFA52F] h-8 w-8 rounded-full flex items-center justify-center font-semibold">
               0
-            </div>
+            </div> */}
+            <CartCount />
           </div>
         </div>
       </Container>

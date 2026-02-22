@@ -1,12 +1,28 @@
+"use client";
+
 import Container from "../ui/Container";
 import Image from "next/image";
+import { motion } from "motion/react";
 
 const Newsletter = () => {
   return (
     <section className="mt-12 sm:mt-32">
       <Container>
-        <div className="bg-[#4A69E2] rounded-3xl sm:rounded-[48px] text-white flex flex-col md:flex-row justify-between items-start sm:items-center px-4 sm:px-12 lg:px-18 py-4 sm:py-16 gap-8 md:gap-50 pb-50 sm:pb-50">
-          <div className="flex-1 w-full">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="bg-[#4A69E2] rounded-3xl sm:rounded-[48px] text-white flex flex-col md:flex-row justify-between items-start sm:items-center px-4 sm:px-12 lg:px-18 py-4 sm:py-16 gap-8 md:gap-50 pb-50 sm:pb-50"
+        >
+          {/* Left text & input */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7 }}
+            className="flex-1 w-full"
+          >
             <h1 className="font-semibold uppercase text-3xl sm:text-5xl">
               Join our KicksPlus Club & get 15% off
             </h1>
@@ -23,8 +39,16 @@ const Newsletter = () => {
                 Submit
               </button>
             </div>
-          </div>
-          <div className="shrink-0">
+          </motion.div>
+
+          {/* Right image/logo */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7 }}
+            className="shrink-0"
+          >
             <Image
               src="/newsLogo.png"
               alt="Newsletter Logo"
@@ -32,8 +56,8 @@ const Newsletter = () => {
               width={367}
               className="object-contain w-50 h-15 sm:h-27 sm:w-80"
             />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </Container>
     </section>
   );

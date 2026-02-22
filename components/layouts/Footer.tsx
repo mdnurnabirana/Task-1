@@ -1,15 +1,43 @@
+"use client";
+
 import React from "react";
 import Container from "../ui/Container";
 import { FaFacebook, FaInstagram, FaTiktok, FaTwitter } from "react-icons/fa";
 import Image from "next/image";
+import { motion } from "motion/react";
 
 const Footer = () => {
   return (
     <footer className="-mt-40">
       <Container>
-        <section className="bg-[#232321] rounded-3xl sm:rounded-[48px] p-4 sm:p-10 text-[#E7E7E3] pb-0 sm:pb-0">
-          <div className="flex flex-col sm:flex-row justify-between gap-6 sm:gap-40">
-            <div className="p-0 pb-0">
+        {/* Main Footer Section */}
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.15 } },
+          }}
+          className="bg-[#232321] rounded-3xl sm:rounded-[48px] p-4 sm:p-10 text-[#E7E7E3] pb-0 sm:pb-0"
+        >
+          {/* Columns */}
+          <motion.div
+            className="flex flex-col sm:flex-row justify-between gap-6 sm:gap-40"
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.1 } },
+            }}
+          >
+            {/* About us */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6 }}
+              className="p-0 pb-0"
+            >
               <h1 className="text-[#FFA52F] font-semibold text-2xl sm:text-4xl">
                 About us
               </h1>
@@ -17,8 +45,16 @@ const Footer = () => {
                 We are the biggest hyperstore in the universe. We got you all
                 cover with our exclusive collections and latest drops.
               </p>
-            </div>
-            <div>
+            </motion.div>
+
+            {/* Categories */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6 }}
+            >
               <h1 className="text-[#FFA52F] font-semibold text-xl sm:text-2xl">
                 Categories
               </h1>
@@ -30,8 +66,16 @@ const Footer = () => {
                 <li>Golf</li>
                 <li>Hiking</li>
               </ul>
-            </div>
-            <div>
+            </motion.div>
+
+            {/* Company */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6 }}
+            >
               <h1 className="text-[#FFA52F] font-semibold text-xl sm:text-2xl">
                 Company
               </h1>
@@ -40,8 +84,16 @@ const Footer = () => {
                 <li>Contacts</li>
                 <li>Blogs</li>
               </ul>
-            </div>
-            <div>
+            </motion.div>
+
+            {/* Follow us */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6 }}
+            >
               <h1 className="text-[#FFA52F] font-semibold text-xl sm:text-2xl">
                 Follow us
               </h1>
@@ -59,16 +111,26 @@ const Footer = () => {
                   <FaTiktok size={24} />
                 </li>
               </div>
-            </div>
-          </div>
-          <Image
-            src="/footerLogo.png"
-            alt="Logo"
-            height={320}
-            width={1260}
-            className="mt-11 sm:mt-24"
-          />
-        </section>
+            </motion.div>
+          </motion.div>
+
+          {/* Footer Logo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+          >
+            <Image
+              src="/footerLogo.png"
+              alt="Logo"
+              height={320}
+              width={1260}
+              className="mt-11 sm:mt-24"
+            />
+          </motion.div>
+        </motion.section>
+
         <p className="font-open-sans font-regular text-[16px] text-[#232321] text-center my-4 sm:my-7">
           © All rights reserved
         </p>
