@@ -53,4 +53,3 @@ Pixel-perfect **Next.js** implementation of the provided Figma design.
 ---
 
 **Submitted by:** Md. Nurnabi Rana
-**Deadline:** 22 Feb 2026, 23:59
