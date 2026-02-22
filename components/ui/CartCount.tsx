@@ -3,12 +3,17 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+type CartItem = {
+  id: number;
+  quantity?: number;
+};
+
 export default function CartCount() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     const update = () => {
-      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+      const cart: CartItem[] = JSON.parse(localStorage.getItem("cart") || "[]");
       const total = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
       setCount(total);
     };
@@ -25,7 +30,10 @@ export default function CartCount() {
   }, []);
 
   return (
-    <Link href="/cart" className="bg-[#FFA52F] h-8 w-8 rounded-full flex items-center justify-center font-semibold text-sm text-black">
+    <Link
+      href="/cart"
+      className="bg-[#FFA52F] h-8 w-8 rounded-full flex items-center justify-center font-semibold text-sm text-black"
+    >
       {count}
     </Link>
   );

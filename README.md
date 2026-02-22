@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ZaviSoft - Frontend Implementation Task
 
-## Getting Started
+Pixel-perfect **Next.js** implementation of the provided Figma design.
 
-First, run the development server:
+**Live Demo:** [https://zavisoft-zeta.vercel.app/](https://zavisoft-zeta.vercel.app/)  
+**Figma Design:** [https://www.figma.com/design/tL4Vl3H0y0XE5N7aqvvlE2/Frontend-task](https://www.figma.com/design/tL4Vl3H0y0XE5N7aqvvlE2/Frontend-task)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Routes
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `/` → Home / Landing Page (product listing + featured sections)  
+- `/products/[id]` → Product Detail Page  
+- `/cart` → Cart Page (bonus – local state implementation)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework:** Next.js 16 (App Router)  
+- **Language:** TypeScript  
+- **Styling:** Tailwind CSS  
+- **Data Fetching:** Axios  
+- **State Management:** React Context API (for Cart)  
+- **Others:** Framer Motion, Swiper, react-hot-toast, react-icons, react-loader-spinner
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Features
 
-## Deploy on Vercel
+- Fully **responsive** (mobile + desktop)  
+- **API integration** for products & categories (Platzi Fake Store)  
+- **Loading / Empty / Error states** implemented  
+- **Cart functionality**: add/remove items, persists in local storage (bonus)  
+- **Minimal animations & transitions** for enhanced UX (bonus)  
+- Clean, modular component structure with meaningful commits  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## API Endpoints
+
+- **Products:** [https://fakeapi.platzi.com/en/rest/products/](https://fakeapi.platzi.com/en/rest/products/)  
+- **Categories:** [https://fakeapi.platzi.com/en/rest/categories/](https://fakeapi.platzi.com/en/rest/categories/)
+
+---
+
+## Notes
+
+- Everything except **products/categories** is static, based on Figma design  
+- Cart is **frontend-only** using local Context (no backend)  
+- UI includes **loading, error, and empty states** for better user experience  
+
+---
+
+**Submitted by:** Md. Nurnabi Rana
+**Deadline:** 22 Feb 2026, 23:59
